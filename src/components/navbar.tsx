@@ -1,0 +1,38 @@
+import { ArrowUpRightIcon } from "lucide-react";
+import Image from "next/image";
+import Link from "next/link";
+import Logo from "public/woodmark-dark.svg";
+import type React from "react";
+import { siteConfig } from "@/lib/config";
+import { cn } from "@/lib/utils";
+
+export function Navbar() {
+	return (
+		<nav>
+			<div className="mx-auto flex w-full max-w-6xl items-center justify-start gap-8 border-stone-200 border-x border-dashed px-8 py-4">
+				<Link href={siteConfig.routes.home}>
+					<Image alt="Logo" className="h-5 w-auto" src={Logo} />
+				</Link>
+				<div className="ml-auto flex items-center justify-center gap-6">
+					<NavLink href={"#"}>About</NavLink>
+					<NavLink href={siteConfig.projectRepo.url} target="_blank">
+						GitHub
+						<ArrowUpRightIcon className="size-4 text-stone-500" />
+					</NavLink>
+				</div>
+			</div>
+		</nav>
+	);
+}
+
+function NavLink({ className, ...props }: React.ComponentProps<typeof Link>) {
+	return (
+		<Link
+			className={cn(
+				"flex items-center justify-center gap-1.5 font-medium text-sm text-stone-700 transition-colors hover:text-stone-500",
+				className,
+			)}
+			{...props}
+		/>
+	);
+}

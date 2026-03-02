@@ -1,7 +1,8 @@
+import { Toaster } from "@/components/ui/sonner";
 import "@/styles/globals.css";
 
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Instrument_Serif, Inter } from "next/font/google";
 
 export const metadata: Metadata = {
 	title: "Create T3 App",
@@ -14,12 +15,21 @@ const inter = Inter({
 	variable: "--font-inter",
 });
 
+const instrument = Instrument_Serif({
+	subsets: ["latin"],
+	weight: "400",
+	variable: "--font-instrument-serif",
+});
+
 export default function RootLayout({
 	children,
 }: Readonly<{ children: React.ReactNode }>) {
 	return (
-		<html className={`${inter.variable}`} lang="en">
-			<body>{children}</body>
+		<html className={`${inter.variable} ${instrument.variable}`} lang="en">
+			<body>
+				{children}
+				<Toaster richColors />
+			</body>
 		</html>
 	);
 }
