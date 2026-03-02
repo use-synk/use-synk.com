@@ -22,13 +22,7 @@ const footerLinks = [
 	{ label: "GitHub", href: siteConfig.projectRepo.url },
 ];
 
-interface WaitlistConfirmationEmailProps {
-	email: string;
-}
-
-export function WaitlistConfirmationEmail({
-	email,
-}: WaitlistConfirmationEmailProps) {
+export function WaitlistConfirmationEmail() {
 	const baseUrl = getBaseUrl();
 
 	return (
@@ -138,6 +132,4 @@ export function WaitlistConfirmationEmail({
 
 export default WaitlistConfirmationEmail;
 
-WaitlistConfirmationEmail.PreviewProps = {
-	email: "test@example.com",
-};
+WaitlistConfirmationEmail.PreviewProps = {};
