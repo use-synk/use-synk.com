@@ -37,6 +37,9 @@ export function JoinWaitlist({
 			} else if (result.error === "already_registered") {
 				setSubmitState("already_registered");
 				toast.error("This email is already on the waitlist.");
+			} else if (result.error === "rate_limited") {
+				setSubmitState("error");
+				toast.error("Too many attempts. Please try again in a minute.");
 			} else {
 				setSubmitState("error");
 				toast.error("Something went wrong. Please try again.");
