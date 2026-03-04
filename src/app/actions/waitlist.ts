@@ -35,6 +35,7 @@ export async function joinWaitlist(email: string): Promise<SignupResult> {
 
 	if (error) {
 		console.error("Resend error:", error);
+		return { success: false, error: "unknown" };
 	}
 
 	return { success: true };
