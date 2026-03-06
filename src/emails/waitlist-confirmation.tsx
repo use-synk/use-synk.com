@@ -116,9 +116,9 @@ export function WaitlistConfirmationEmail({
 							contact us at{" "}
 							<Link
 								className="font-sans text-lime-500"
-								href="mailto:hello@use-synk.com"
+								href="mailto:hello@mail.use-synk.com"
 							>
-								hello@use-synk.com
+								hello@mail.use-synk.com
 							</Link>
 							. See our{" "}
 							<Link
