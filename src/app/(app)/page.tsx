@@ -1,5 +1,6 @@
 import { Footer } from "@/components/footer";
 import { CalloutSection } from "@/components/sections/callout";
+import { FAQSection } from "@/components/sections/faq";
 import { FeaturesSection } from "@/components/sections/features";
 import { HeroSection } from "@/components/sections/hero";
 import { RoadmapSection } from "@/components/sections/roadmap";
@@ -10,6 +11,7 @@ export default function HomePage() {
 			<HeroSection />
 			<FeaturesSection />
 			<RoadmapSection />
+			<FAQSection />
 			<CalloutSection />
 			<Footer />
 		</main>
